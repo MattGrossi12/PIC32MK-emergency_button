@@ -67,28 +67,12 @@
 #pragma config TSEQ = 0xFFFF
 #pragma config CSEQ = 0xFFFF
 
-#endif // _CONFIG_BITS_SOURCE
+#endif /* _CONFIG_BITS_SOURCE */
 
 #include <xc.h>
 #include <sys/attribs.h>
 #include <stdint.h>
 
-#define ADC_REFERENCE_VOLTAGE   3.3f
-#define ADC_MAX_COUNTS          4095.0f
-
-/* Curva polinomial da distância em função da tensão do sensor:
- * f(V) = 1.720473*V^3 + 4.15228*V^2 - 59.8489*V + 117.313
- */
-#define DIST_POLY_A             1.720473f
-#define DIST_POLY_B             4.15228f
-#define DIST_POLY_C            -59.8489f
-#define DIST_POLY_D             117.313f
-
-/* Faixa válida de medição do sensor em centímetros. */
-#define DIST_MIN_VALID_CM       10.0f
-#define DIST_MAX_VALID_CM       80.0f
-
 void init_OSC(void);
-void init_TMR2(void);
 
 #endif /* DEFS_H */

@@ -1,30 +1,39 @@
 #define _CONFIG_BITS_SOURCE
 #include "defs.h"
+#include "adc_1.h"
 #include "pins.h"
 
-static void init_pins(void)
+void init_OSC(void)
 {
-    /*
-     * AN0 no MCA048 está em RA0.
-     * RA1 fica reservado para o LED amarelo externo.
-     */
-    ANSELA = 0x0000;
-    ANSELB = 0x0000;
-    ANSELC = 0x0000;
-    ANSELD = 0x0000;
+    SYSKEY = 0x00000000;
+    SYSKEY = 0xAA996655;
+    SYSKEY = 0x556699AA;
 
-    ANSELAbits.ANSA0 = 1;
-    TRISAbits.TRISA0 = 1;
+    /* PBCLK2 = SYSCLK / 1 */
+    PB2DIVbits.PBDIV = 0;
 
-    RLED_DIR = 0;
-    GLED_DIR = 0;
-    YLED_DIR = 0;
-    LEDs_ClearAll();
+    SYSKEY = 0x33333333;
+}
+
+void init_TMR2(void)
+{
+    PR2 = 250000u - 16u;
+
+    T2CONbits.ON = 0;
+    T2CONbits.TCKPS = 4;
+    T2CONbits.TCS = 0;
+    T2CONbits.T32 = 1;
+
+    IPC2bits.T2IP = 1;
+    IFS0bits.T2IF = 0;
+    IEC0bits.T2IE = 1;
+
+    T2CONbits.ON = 1;
 }
 
 int main(void)
 {
-    init_pins();
+    Pins_Init();
     init_OSC();
     init_TMR2();
     init_ADC();

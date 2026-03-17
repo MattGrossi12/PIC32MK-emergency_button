@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/aux_func.c src/blink.c src/main.c src/pin_declaration.c src/analog_read.c src/values.c
+SOURCEFILES_QUOTED_IF_SPACED=src/adc_1.c src/isr.c src/main.c src/out_control.c src/pins.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/aux_func.o ${OBJECTDIR}/src/blink.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/pin_declaration.o ${OBJECTDIR}/src/analog_read.o ${OBJECTDIR}/src/values.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/aux_func.o.d ${OBJECTDIR}/src/blink.o.d ${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/src/pin_declaration.o.d ${OBJECTDIR}/src/analog_read.o.d ${OBJECTDIR}/src/values.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/adc_1.o ${OBJECTDIR}/src/isr.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/out_control.o ${OBJECTDIR}/src/pins.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/adc_1.o.d ${OBJECTDIR}/src/isr.o.d ${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/src/out_control.o.d ${OBJECTDIR}/src/pins.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/aux_func.o ${OBJECTDIR}/src/blink.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/pin_declaration.o ${OBJECTDIR}/src/analog_read.o ${OBJECTDIR}/src/values.o
+OBJECTFILES=${OBJECTDIR}/src/adc_1.o ${OBJECTDIR}/src/isr.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/out_control.o ${OBJECTDIR}/src/pins.o
 
 # Source Files
-SOURCEFILES=src/aux_func.c src/blink.c src/main.c src/pin_declaration.c src/analog_read.c src/values.c
+SOURCEFILES=src/adc_1.c src/isr.c src/main.c src/out_control.c src/pins.c
 
 
 
@@ -101,17 +101,17 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/src/aux_func.o: src/aux_func.c  .generated_files/flags/default/4ab6c83093234f2a7f8932fa82b3de4df1080178 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/adc_1.o: src/adc_1.c  .generated_files/flags/default/852309938d2b349b4c7cba431b67dc0d5795b9f1 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/aux_func.o.d 
-	@${RM} ${OBJECTDIR}/src/aux_func.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/aux_func.o.d" -o ${OBJECTDIR}/src/aux_func.o src/aux_func.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/adc_1.o.d 
+	@${RM} ${OBJECTDIR}/src/adc_1.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/adc_1.o.d" -o ${OBJECTDIR}/src/adc_1.o src/adc_1.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/src/blink.o: src/blink.c  .generated_files/flags/default/e91f594040ef0cf6158cbe27ff20e573ce5f6d1f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/isr.o: src/isr.c  .generated_files/flags/default/71f098c267bd8cea54d179a076b15de74abb4b45 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/blink.o.d 
-	@${RM} ${OBJECTDIR}/src/blink.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/blink.o.d" -o ${OBJECTDIR}/src/blink.o src/blink.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/isr.o.d 
+	@${RM} ${OBJECTDIR}/src/isr.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/isr.o.d" -o ${OBJECTDIR}/src/isr.o src/isr.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 ${OBJECTDIR}/src/main.o: src/main.c  .generated_files/flags/default/6f2a532aa70903a31a7960371382e17b43d53537 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
@@ -119,36 +119,30 @@ ${OBJECTDIR}/src/main.o: src/main.c  .generated_files/flags/default/6f2a532aa709
 	@${RM} ${OBJECTDIR}/src/main.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/main.o.d" -o ${OBJECTDIR}/src/main.o src/main.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/src/pin_declaration.o: src/pin_declaration.c  .generated_files/flags/default/f130b6c9d670ff9f4e117c8e8133a14a9675b6a1 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/out_control.o: src/out_control.c  .generated_files/flags/default/3c58cdc89ccdb0716ea7c29771f0ea2f446c44ac .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/pin_declaration.o.d 
-	@${RM} ${OBJECTDIR}/src/pin_declaration.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/pin_declaration.o.d" -o ${OBJECTDIR}/src/pin_declaration.o src/pin_declaration.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/out_control.o.d 
+	@${RM} ${OBJECTDIR}/src/out_control.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/out_control.o.d" -o ${OBJECTDIR}/src/out_control.o src/out_control.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/src/analog_read.o: src/analog_read.c  .generated_files/flags/default/74f789dc4d583429ba2203416d3c30a22158bf3f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/pins.o: src/pins.c  .generated_files/flags/default/34f244b142b1639617c9cf1705532d4bb9f0485 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/analog_read.o.d 
-	@${RM} ${OBJECTDIR}/src/analog_read.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/analog_read.o.d" -o ${OBJECTDIR}/src/analog_read.o src/analog_read.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/src/values.o: src/values.c  .generated_files/flags/default/2a18058ee6256943c338545bc2a3536decf25c16 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/values.o.d 
-	@${RM} ${OBJECTDIR}/src/values.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/values.o.d" -o ${OBJECTDIR}/src/values.o src/values.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/pins.o.d 
+	@${RM} ${OBJECTDIR}/src/pins.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/pins.o.d" -o ${OBJECTDIR}/src/pins.o src/pins.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 else
-${OBJECTDIR}/src/aux_func.o: src/aux_func.c  .generated_files/flags/default/b4752dced1c0e88e6df913cadbeea654c1839483 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/adc_1.o: src/adc_1.c  .generated_files/flags/default/5d6d89c656a4658d8a758a5c4ab7715fd85a5e66 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/aux_func.o.d 
-	@${RM} ${OBJECTDIR}/src/aux_func.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/aux_func.o.d" -o ${OBJECTDIR}/src/aux_func.o src/aux_func.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/adc_1.o.d 
+	@${RM} ${OBJECTDIR}/src/adc_1.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/adc_1.o.d" -o ${OBJECTDIR}/src/adc_1.o src/adc_1.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/src/blink.o: src/blink.c  .generated_files/flags/default/9e4da0bdbfbc3cc3e56591b2014d383c76e20e05 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/isr.o: src/isr.c  .generated_files/flags/default/3d22210dc7bb9ed0c3e81ddaeb82ce9c46137498 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/blink.o.d 
-	@${RM} ${OBJECTDIR}/src/blink.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/blink.o.d" -o ${OBJECTDIR}/src/blink.o src/blink.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/isr.o.d 
+	@${RM} ${OBJECTDIR}/src/isr.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/isr.o.d" -o ${OBJECTDIR}/src/isr.o src/isr.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 ${OBJECTDIR}/src/main.o: src/main.c  .generated_files/flags/default/d0b7df12fd054f94743d3b772ef74c7528c5a8a8 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
@@ -156,23 +150,17 @@ ${OBJECTDIR}/src/main.o: src/main.c  .generated_files/flags/default/d0b7df12fd05
 	@${RM} ${OBJECTDIR}/src/main.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/main.o.d" -o ${OBJECTDIR}/src/main.o src/main.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/src/pin_declaration.o: src/pin_declaration.c  .generated_files/flags/default/aeb43b5f30d76946490b84b843359553d2775102 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/out_control.o: src/out_control.c  .generated_files/flags/default/53b445988e08653ed883e3557d8ebae9cc134167 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/pin_declaration.o.d 
-	@${RM} ${OBJECTDIR}/src/pin_declaration.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/pin_declaration.o.d" -o ${OBJECTDIR}/src/pin_declaration.o src/pin_declaration.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/out_control.o.d 
+	@${RM} ${OBJECTDIR}/src/out_control.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/out_control.o.d" -o ${OBJECTDIR}/src/out_control.o src/out_control.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/src/analog_read.o: src/analog_read.c  .generated_files/flags/default/e0773e94aee65482df8ab0475f7631795b4cf60f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/pins.o: src/pins.c  .generated_files/flags/default/d9701ec52e2864ac4aa23782e07b07c8c0548ec .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/analog_read.o.d 
-	@${RM} ${OBJECTDIR}/src/analog_read.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/analog_read.o.d" -o ${OBJECTDIR}/src/analog_read.o src/analog_read.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/src/values.o: src/values.c  .generated_files/flags/default/32fe38e5287bce0664a146761795852d93090c27 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/values.o.d 
-	@${RM} ${OBJECTDIR}/src/values.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/values.o.d" -o ${OBJECTDIR}/src/values.o src/values.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/src/pins.o.d 
+	@${RM} ${OBJECTDIR}/src/pins.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -fdata-sections -O1 -fno-common -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/src/pins.o.d" -o ${OBJECTDIR}/src/pins.o src/pins.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 endif
 

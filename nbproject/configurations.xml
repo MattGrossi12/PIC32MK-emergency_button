@@ -18,13 +18,17 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>src/aux_func.c</itemPath>
-      <itemPath>src/blink.c</itemPath>
-      <itemPath>src/defs.h</itemPath>
-      <itemPath>src/main.c</itemPath>
-      <itemPath>src/pin_declaration.c</itemPath>
-      <itemPath>src/analog_read.c</itemPath>
-      <itemPath>src/values.c</itemPath>
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <itemPath>src/adc_1.h</itemPath>
+        <itemPath>src/defs.h</itemPath>
+        <itemPath>src/out_control.h</itemPath>
+        <itemPath>src/pins.h</itemPath>
+        <itemPath>src/adc_1.c</itemPath>
+        <itemPath>src/isr.c</itemPath>
+        <itemPath>src/main.c</itemPath>
+        <itemPath>src/out_control.c</itemPath>
+        <itemPath>src/pins.c</itemPath>
+      </logicalFolder>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

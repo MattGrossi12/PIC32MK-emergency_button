@@ -16,13 +16,11 @@ foreach(source_file ${PIC32MK_analog_read_example_default_default_XC32_FILE_TYPE
 endforeach()
 
 set(PIC32MK_analog_read_example_default_default_XC32_FILE_TYPE_compile
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/adc_lib.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/analog_read.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/aux_func.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/blink.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/adc_1.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/isr.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/main.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/pin_declaration.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/values.c")
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/out_control.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/pins.c")
 set_source_files_properties(${PIC32MK_analog_read_example_default_default_XC32_FILE_TYPE_compile} PROPERTIES LANGUAGE C)
 set(PIC32MK_analog_read_example_default_default_XC32_FILE_TYPE_compile_cpp)
 set_source_files_properties(${PIC32MK_analog_read_example_default_default_XC32_FILE_TYPE_compile_cpp} PROPERTIES LANGUAGE CXX)
