@@ -14,7 +14,7 @@ Este projeto implementa uma aplicação embarcada para o **PIC32MK0128MCA048** q
    
 ![GP2Y0A02YK0F](https://raw.githubusercontent.com/MattGrossi12/PIC32MK-analog_read_example/main/images/sensor_model.png)
 
-<div align="justify">
+<div align="left">
 - calcular a tensão equivalente na entrada do ADC;
 - estimar a distância em centímetros;
 - classificar a leitura em faixas de tensão;
@@ -32,6 +32,8 @@ A aplicação foi organizada de forma modular, separando a configuração de per
 
 O dispositivo analógico em uso é o **Sharp GP2Y0A02YK0F**, um sensor de medição de distância por triangulação com **saída analógica**. Segundo o datasheet:
 
+<div align="left">
+   
 - **faixa de medição do sensor:** **20 a 150 cm**;
 - **alimentação recomendada:** **4,5 V a 5,5 V**;
 - **corrente típica:** **33 mA**;
@@ -54,10 +56,10 @@ $$
 
 ![Curva característica do sensor](https://raw.githubusercontent.com/MattGrossi12/PIC32MK-analog_read_example/main/images/sensor_curve.jpeg)
 
-
-
 Com base no resultado:
 
+<div align="left">
+   
 1. a tensão calculada é armazenada em variável global de monitoramento;
 2. a distância estimada é atualizada;
 3. se a distância calculada estiver fora da janela configurada no firmware, todas as saídas são desligadas;
@@ -87,6 +89,8 @@ Com base no resultado:
 
 Como o firmware converte a leitura do ADC usando:
 
+<div align="left">
+   
 - `ADC_REFERENCE_VOLTAGE = 3.3f`
 - `ADC_MAX_COUNTS = 4095.0f`
 
@@ -121,6 +125,8 @@ Essa divisão mantém as ISRs curtas e desloca o processamento principal para fo
 ### `defs.h`
 Centraliza:
 
+<div align="left">
+   
 - *configuration bits* do PIC32MK;
 - inclusões globais (`xc.h`, `sys/attribs.h`, `stdint.h`);
 - constantes de conversão ADC;
@@ -129,6 +135,8 @@ Centraliza:
 - protótipos de inicialização de clock e timer.
 
 Constantes relevantes do código:
+
+<div align="left">
 
 - `ADC_REFERENCE_VOLTAGE = 3.3f`
 - `ADC_MAX_COUNTS = 4095.0f`
@@ -140,6 +148,8 @@ Responsáveis pela configuração e pelo processamento do ADC.
 
 Principais elementos:
 
+<div align="left">
+   
 - canal utilizado: `AN0`;
 - resolução configurada em **12 bits**;
 - leitura da última amostra via `g_adc0_last_value`;
@@ -150,6 +160,8 @@ Principais elementos:
 
 A função `analog_process_sample()`:
 
+<div align="left">
+   
 - converte a leitura bruta em tensão;
 - calcula a distância por curva polinomial;
 - desliga todas as saídas se a distância calculada estiver fora da janela válida configurada;
@@ -174,6 +186,8 @@ Implementam a lógica de saída dos LEDs.
 
 Faixas de tensão configuradas:
 
+<div align="left">
+   
 - **Verde:** `0.95 V` a `1.50 V`
 - **Amarelo:** `1.55 V` a `2.10 V`
 - **Vermelho:** `2.15 V` a `2.50 V`
@@ -183,6 +197,7 @@ Existe uma **banda morta** entre as faixas para reduzir comutação espúria por
 ### `pins.h` / `pins.c`
 Definem e inicializam os pinos usados pela aplicação.
 
+<div align="left">
 - configuram **RA0** como entrada analógica;
 - configuram os LEDs como saída digital;
 - garantem o desligamento inicial de todas as saídas.
@@ -190,6 +205,8 @@ Definem e inicializam os pinos usados pela aplicação.
 ### `isr.c`
 Contém as rotinas de interrupção:
 
+<div align="left">
+   
 - **Timer2 ISR**: inicia uma nova conversão ADC por software;
 - **ADC EOS ISR**: captura o resultado da conversão e sinaliza disponibilidade de nova amostra.
 
@@ -198,6 +215,8 @@ Ponto de entrada da aplicação.
 
 Responsabilidades:
 
+<div align="left">
+   
 - habilitar os *configuration bits* por meio de `_CONFIG_BITS_SOURCE`;
 - inicializar periféricos;
 - habilitar interrupções multi-vetoriais;
@@ -209,6 +228,8 @@ Responsabilidades:
 
 O processamento segue esta lógica:
 
+<div align="left">
+   
 - calcula a tensão equivalente;
 - estima a distância;
 - se a distância estiver fora da janela válida do firmware, todos os LEDs são desligados;
@@ -216,12 +237,15 @@ O processamento segue esta lógica:
 
 ### Classificação por tensão
 
+<div align="center">
+   
 | Faixa | Intervalo de tensão | LED ativo |
 |---|---|---|
 | Verde | 0.95 V a 1.50 V | Verde |
 | Amarela | 1.55 V a 2.10 V | Amarelo |
 | Vermelha | 2.15 V a 2.50 V | Vermelho |
 
+<div align="justify">
 Valores entre faixas ou fora desses limites também desligam todas as saídas.
 
 ---
