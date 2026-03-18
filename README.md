@@ -14,6 +14,7 @@ Este projeto implementa uma aplicação embarcada para o **PIC32MK0128MCA048** q
    
 ![GP2Y0A02YK0F](https://raw.githubusercontent.com/MattGrossi12/PIC32MK-analog_read_example/main/images/sensor_model.png)
 
+<div align="justify">
 - calcular a tensão equivalente na entrada do ADC;
 - estimar a distância em centímetros;
 - classificar a leitura em faixas de tensão;
@@ -88,7 +89,7 @@ Como o firmware converte a leitura do ADC usando:
 
 - `ADC_REFERENCE_VOLTAGE = 3.3f`
 - `ADC_MAX_COUNTS = 4095.0f`
-- 
+
 <div align="justify">
    
 A tensão medida em `AN0` é interpretada com referência de **3,3 V** e resolução de **12 bits**.
@@ -216,7 +217,7 @@ O processamento segue esta lógica:
 ### Classificação por tensão
 
 | Faixa | Intervalo de tensão | LED ativo |
-|---|---:|---|
+|---|---|---|
 | Verde | 0.95 V a 1.50 V | Verde |
 | Amarela | 1.55 V a 2.10 V | Amarelo |
 | Vermelha | 2.15 V a 2.50 V | Vermelho |
