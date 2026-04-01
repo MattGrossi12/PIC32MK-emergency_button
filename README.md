@@ -62,9 +62,9 @@ A lógica implementada hoje é a seguinte:
 | **Ação** |
 | :--- |
 | Desligado |
-|![Desligado](https://github.com/MattGrossi12/PIC32MK-on_off_button/images/mode_off.png)|
+|![Desligado](https://github.com/MattGrossi12/PIC32MK-on_off_button/blob/main/images/mode_off.png)|
 | Ligado |
-|![Ligado](https://github.com/MattGrossi12/PIC32MK-on_off_button/images/mode_on.png)|
+|![Ligado](https://github.com/MattGrossi12/PIC32MK-on_off_button/blob/main/images/mode_on.png)|
 
 ## Fluxo de operação
 1. O microcontrolador inicia com os pinos configurados.
